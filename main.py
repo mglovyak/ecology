@@ -18,7 +18,12 @@ async def facts(ctx):
 @bot.command()
 async def noecology(ctx):
     await ctx.send(noecology_facts())
-
-
+    
+@bot.command()
+async def eco(ctx):
+    img=os.listdir('img_eco')
+    with open(f'img_eco/{random.choice(img)}', 'rb') as f:
+        picture = discord.File(f)
+    await ctx.send(file=picture)
 
 bot.run()
